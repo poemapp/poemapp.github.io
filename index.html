@@ -1,521 +1,686 @@
-<!DOCTYPE HTML>
-<!--
-	Fractal by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>POEM APP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Favicon (App Icon) -->
+	<link rel="icon" type="image/png" href="images/app_icon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POEM APP - Premium Edition</title>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- Premium Color Palette --- */
+        :root {
+            --bg-dark: #0b0b0b;
+            --card-bg: #141414;
+            --gold-primary: #ca9e2e;
+            --gold-secondary: #966e0f;
+            --gold-light: #ebdca4;
+            --text-light: #ffffff;
+            --text-muted: #9a9a9a;
+            --border-color: #222222;
+        }
 
-		<!-- Header -->
-			<header id="header">
-				<div class="content">
-					<h1><a href="#">POEMS APP v:1.1</a></h1>
-					<p>POEMS is a free offline application for poem lovers.</p>
-					<ul class="actions">
-						<li><a href="assets/app/POEMS_1.1.apk" class="button primary icon solid fa-download">Download</a></li>
-						<li><a href="#one" class="button icon solid fa-chevron-down scrolly">Learn More</a></li>
-					</ul>
-				</div>
-				<div class="image phone"><div class="inner"><img src="images/screen.jpg" alt="" /></div></div>
-			</header>
+        /* --- Base Resets --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
 
-		<!-- One -->
-			<section id="one" class="wrapper style2 special">
-				<header class="major">
-					<h2>Thank you for your download</h2>
-				</header>
-				<ul class="icons major">
-					<li><span class="icon solid fa-camera-retro"><span class="label">Shoot</span></span></li>
-					<li><span class="icon solid fa-sync"><span class="label">Process</span></span></li>
-					<li><span class="icon solid fa-cloud"><span class="label">Upload</span></span></li>
-				</ul>
-			</section>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+        }
 
-		<!-- Two -->
-			<section id="two" class="wrapper">
-				<div class="inner alt">
-					<section class="spotlight">
-						<div class="image"><img src="images/me.jpg" alt="" /></div>
-						<div class="content">
-							<h3>Suu Nge Thit (YGN)</h3>
-							<p>I am just a normal boy who enjoy every moment along this journey of life. I believe every each of us is given at least a gift once we stepped into this world. Some says it is talent, some says it is expertise. Whatever it is called, we all are born with such a unique gift, and it is just only matter of time to find out what our talent is. So I am one of those who is trying to dig out that gift I was given.</p>
-						</div>
-					</section>
-					<section class="spotlight">
-						<div class="image"><img src="images/app_icon.png" alt="" /></div>
-						<div class="content">
-							<h3>Hello All of My Friend.</h3>
-							<p>All Suu Nge Thit's poems at one place in different categories. Read offline.
-							90 poems. Here is a large collection of Poems.Why delay then, download the app and use it offline.
-						Share this app with your friends and families and have a good time ! Watch this space for more updates.Please rate this app if you like. Newer Version of App is Available Click on the download button to update the app now.Thank for download.</p>
-						</div>
-					</section>
-					 </div>
-			</section>
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 0.5px;
+        }
 
-		<!-- Three -->
-			<section id="three" class="wrapper style2 special">
-				<header class="major">
-					<h2>POEMS APP v:1.0</h2>
-					<p>POEMS is a free offline application for poem lovers.</p>
-				</header>
-				<!--Five-->
-<style>
-* {
-  box-sizing: border-box;
-}
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
 
- 
+        /* --- Layout Container (Optimized Layout) --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
 
-#myTable {
-  border-collapse: collapse;
-  width: 100%;
-  border: 1px solid #ddd;
-  font-size: 18px;
-}
+        /* --- Global Buttons (Upscaled for 110% Feel) --- */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 28px;
+            border-radius: 25px;
+            font-weight: 500;
+            font-size: 0.98rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
 
-#myTable th, #myTable td {
-  text-align: left;
-  padding: 12px;
-}
+        .btn-gold {
+            background: linear-gradient(135deg, var(--gold-primary), var(--gold-secondary));
+            color: #000;
+            box-shadow: 0 4px 15px rgba(202, 158, 46, 0.25);
+            font-weight: 600;
+        }
 
-#myTable tr {
-  border-bottom: 1px solid #ddd;
-}
+        .btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(202, 158, 46, 0.45);
+        }
 
-#myTable tr.header, #myTable tr:hover {
-  background-color: #f1f1f1;
-}
+        .btn-outline {
+            border: 1px solid #3c3c3c;
+            color: var(--text-light);
+        }
 
+        .btn-outline:hover {
+            background-color: rgba(255, 255, 255, 0.04);
+            border-color: var(--gold-primary);
+            color: var(--gold-primary);
+            transform: translateY(-2px);
+        }
 
+        /* --- Header / Hero Section --- */
+        header {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            padding: 3rem 8%;
+            background: radial-gradient(circle at 85% 30%, rgba(202, 158, 46, 0.08), transparent 45%), var(--bg-dark);
+            position: relative;
+            overflow: hidden;
+        }
 
- 
- 
+        .hero-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            gap: 60px;
+        }
 
+        .hero-content {
+            max-width: 550px;
+        }
 
- 
-</style>
-<table id="myTable">
-  <tr class="header">
-    <th style="width:60%;">POEMS</th>
-    <th style="width:40%;"><div class="image"><img src="images/app_icon.png" width="50" height="50" alt="" /></div></th>
+        .app-version-badge {
+            background-color: rgba(202, 158, 46, 0.08);
+            color: var(--gold-primary);
+            padding: 5px 14px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border: 1px solid rgba(202, 158, 46, 0.2);
+            display: inline-block;
+            margin-bottom: 1.8rem;
+            letter-spacing: 0.5px;
+        }
 
-  </tr>
-  <tr>
-    <td>Version</td>
-    <td>1.1</td>
-  </tr>
-  <tr>
-    <td>Build</td>
-    <td>1</td>
-  </tr>
-  </table>
+        .hero-content h1 {
+            font-size: 3.4rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: #ffffff;
+            font-weight: 700;
+        }
 
-   
-<table id="myTable">
-  <tr class="header">
-    <th style="width:60%;">APP DETAILS</th>
-    <th style="width:40%;"></div></th>
-  </tr>
-  <tr>
-    <td>Package</td>
-    <td>com.suupoem.book</td>
-  </tr>
-  <tr>
-    <td>Minimum OS version</td>
-    <td>Lollipop 5.0</td>
-  </tr>
-  <tr>
-    <td>Target OS version</td>
-    <td>Pie 9.0</td>
-  </tr>
-  <tr>
-    <td>Size</td>
-    <td>11.70 MB</td>
-  </tr>
-</table>
+        .hero-content p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-bottom: 2.2rem;
+            line-height: 1.65;
+        }
 
-<table id="myTable">
-  <tr class="header">
-    <th style="width:60%;">OTHER INFORMATION</th>
-    <th style="width:40%;"></div></th>
-  </tr>
-  <tr>
-    <td>Uploaded</td>
-    <td>7/2/2024 10:16 AM</td>
-  </tr>
-  <tr>
-    <td>Owner</td>
-    <td>Suu Nge Thit(YGN)</td>
-  </tr>
- </table>
- <! -- Imagepreview -->
+        .hero-actions {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
 
- 	<h2>Screenshots</h2>
- 
-<div style="align-items: left; border: 1px solid rgb(238, 238, 238); display: flex; justify-content: left; overflow: scroll; width: 100%;">
-<img alt="Screenshot01" loading="lazy" src="images/Preview1.jpg" style="border-radius: 15px; height: 70% auto; margin: 5px; width: 40%;">
-<img alt="Screenshot02" loading="lazy" src="images/Preview2.jpg" style="border-radius: 15px; height: 70% auto; margin: 5px; width: 40%;">
-<img alt="Screenshot03" loading="lazy" src="images/Preview3.jpg" style="border-radius: 15px; height: 70% auto; margin: 5px; width: 40%;">
-<img alt="Screenshot04" loading="lazy" src="images/Preview4.jpg" style="border-radius: 15px; height: 70% auto; margin: 5px; width: 40%;">
-<img alt="Screenshot05" loading="lazy" src="images/Preview5.jpg" style="border-radius: 15px; height: 70% auto; margin: 5px; width: 40%;">&nbsp;
-</div>
+        .hero-image {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
+        .phone-mockup {
+            width: 270px;
+            height: 550px;
+            border: 11px solid #1c1c1c;
+            border-radius: 38px;
+            background-color: #111;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.75);
+            overflow: hidden;
+            position: relative;
+        }
 
+        .phone-mockup img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-<p>POEMS v1.1 Download</p>
+        /* Ambient Glow behind the device */
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: var(--gold-primary);
+            filter: blur(80px);
+            opacity: 0.12;
+            z-index: 0;
+        }
+        .phone-mockup { z-index: 1; }
 
- <!--five-->
-				<ul class="actions special">
-					<li><a href="assets/app/POEMS_1.1.apk" class="button primary icon solid fa-download">Download</a></li>
-					<li><a href="https://suuetech.blogspot.com/" class="button">Learn More</a></li>
-				</ul>
-			</section>
+        /* --- Features Section --- */
+        .features {
+            padding: 5rem 8%;
+            background-color: #0f0f0f;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
 
-		<!-- Four -->
-		<!--
-			<section id="four" class="wrapper">
-				<div class="inner">
+        .features h2 {
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: var(--gold-light);
+        }
 
-					<header class="major">
-						<h2>Elements</h2>
-					</header>
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
 
-					<section>
-						<h4>Text</h4>
-						<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
-						This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
-						This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
-						<hr />
-						<header>
-							<h4>Heading with a Subtitle</h4>
-							<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-						</header>
-						<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
-						<header>
-							<h5>Heading with a Subtitle</h5>
-							<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-						</header>
-						<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
-						<hr />
-						<h2>Heading Level 2</h2>
-						<h3>Heading Level 3</h3>
-						<h4>Heading Level 4</h4>
-						<h5>Heading Level 5</h5>
-						<h6>Heading Level 6</h6>
-						<hr />
-						<h5>Blockquote</h5>
-						<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
-						<h5>Preformatted</h5>
-						<pre><code>i = 0;
+        .feature-card {
+            background-color: var(--card-bg);
+            padding: 35px 28px;
+            border-radius: 18px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
 
-while (!deck.isInOrder()) {
-  print 'Iteration ' + i;
-  deck.shuffle();
-  i++;
-}
+        .feature-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(202, 158, 46, 0.3);
+        }
 
-print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
-					</section>
+        .feature-card i {
+            font-size: 2.2rem;
+            color: var(--gold-primary);
+            margin-bottom: 1.2rem;
+        }
 
-					<section>
-						<h4>Lists</h4>
-						<div class="row">
-							<div class="col-6 col-12-medium">
-								<h5>Unordered</h5>
-								<ul>
-									<li>Dolor pulvinar etiam.</li>
-									<li>Sagittis adipiscing.</li>
-									<li>Felis enim feugiat.</li>
-								</ul>
-								<h5>Alternate</h5>
-								<ul class="alt">
-									<li>Dolor pulvinar etiam.</li>
-									<li>Sagittis adipiscing.</li>
-									<li>Felis enim feugiat.</li>
-								</ul>
-							</div>
-							<div class="col-6 col-12-medium">
-								<h5>Ordered</h5>
-								<ol>
-									<li>Dolor pulvinar etiam.</li>
-									<li>Etiam vel felis viverra.</li>
-									<li>Felis enim feugiat.</li>
-									<li>Dolor pulvinar etiam.</li>
-									<li>Etiam vel felis lorem.</li>
-									<li>Felis enim et feugiat.</li>
-								</ol>
-								<h5>Icons</h5>
-								<ul class="icons">
-									<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-								</ul>
-							</div>
-						</div>
-						<h5>Actions</h5>
-						<div class="row">
-							<div class="col-6 col-12-medium">
-								<ul class="actions">
-									<li><a href="#" class="button primary">Default</a></li>
-									<li><a href="#" class="button">Default</a></li>
-								</ul>
-								<ul class="actions small">
-									<li><a href="#" class="button primary small">Small</a></li>
-									<li><a href="#" class="button small">Small</a></li>
-								</ul>
-								<ul class="actions stacked">
-									<li><a href="#" class="button primary">Default</a></li>
-									<li><a href="#" class="button">Default</a></li>
-								</ul>
-								<ul class="actions stacked">
-									<li><a href="#" class="button primary small">Small</a></li>
-									<li><a href="#" class="button small">Small</a></li>
-								</ul>
-							</div>
-							<div class="col-6 col-12-medium">
-								<ul class="actions stacked">
-									<li><a href="#" class="button primary fit">Default</a></li>
-									<li><a href="#" class="button fit">Default</a></li>
-								</ul>
-								<ul class="actions stacked">
-									<li><a href="#" class="button primary small fit">Small</a></li>
-									<li><a href="#" class="button small fit">Small</a></li>
-								</ul>
-							</div>
-						</div>
-					</section>
+        .feature-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.6rem;
+        }
 
-					<section>
-						<h4>Table</h4>
-						<h5>Default</h5>
-						<div class="table-wrapper">
-							<table>
-								<thead>
-									<tr>
-										<th>Name</th>
-										<th>Description</th>
-										<th>Price</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>Item One</td>
-										<td>Ante turpis integer aliquet porttitor.</td>
-										<td>29.99</td>
-									</tr>
-									<tr>
-										<td>Item Two</td>
-										<td>Vis ac commodo adipiscing arcu aliquet.</td>
-										<td>19.99</td>
-									</tr>
-									<tr>
-										<td>Item Three</td>
-										<td> Morbi faucibus arcu accumsan lorem.</td>
-										<td>29.99</td>
-									</tr>
-									<tr>
-										<td>Item Four</td>
-										<td>Vitae integer tempus condimentum.</td>
-										<td>19.99</td>
-									</tr>
-									<tr>
-										<td>Item Five</td>
-										<td>Ante turpis integer aliquet porttitor.</td>
-										<td>29.99</td>
-									</tr>
-								</tbody>
-								<tfoot>
-									<tr>
-										<td colspan="2"></td>
-										<td>100.00</td>
-									</tr>
-								</tfoot>
-							</table>
-						</div>
+        .feature-card p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
 
-						<h5>Alternate</h5>
-						<div class="table-wrapper">
-							<table class="alt">
-								<thead>
-									<tr>
-										<th>Name</th>
-										<th>Description</th>
-										<th>Price</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>Item One</td>
-										<td>Ante turpis integer aliquet porttitor.</td>
-										<td>29.99</td>
-									</tr>
-									<tr>
-										<td>Item Two</td>
-										<td>Vis ac commodo adipiscing arcu aliquet.</td>
-										<td>19.99</td>
-									</tr>
-									<tr>
-										<td>Item Three</td>
-										<td> Morbi faucibus arcu accumsan lorem.</td>
-										<td>29.99</td>
-									</tr>
-									<tr>
-										<td>Item Four</td>
-										<td>Vitae integer tempus condimentum.</td>
-										<td>19.99</td>
-									</tr>
-									<tr>
-										<td>Item Five</td>
-										<td>Ante turpis integer aliquet porttitor.</td>
-										<td>29.99</td>
-									</tr>
-								</tbody>
-								<tfoot>
-									<tr>
-										<td colspan="2"></td>
-										<td>100.00</td>
-									</tr>
-								</tfoot>
-							</table>
-						</div>
-					</section>
+        /* --- Spotlight / Info Section --- */
+        .spotlight-section {
+            padding: 6rem 8%;
+        }
 
-					<section>
-						<h4>Buttons</h4>
-						<ul class="actions">
-							<li><a href="#" class="button primary">Primary</a></li>
-							<li><a href="#" class="button">Default</a></li>
-						</ul>
-						<ul class="actions">
-							<li><a href="#" class="button large">Large</a></li>
-							<li><a href="#" class="button">Default</a></li>
-							<li><a href="#" class="button small">Small</a></li>
-						</ul>
-						<ul class="actions fit">
-							<li><a href="#" class="button fit">Fit</a></li>
-							<li><a href="#" class="button primary fit">Fit</a></li>
-							<li><a href="#" class="button fit">Fit</a></li>
-						</ul>
-						<ul class="actions fit small">
-							<li><a href="#" class="button primary fit small">Fit + Small</a></li>
-							<li><a href="#" class="button fit small">Fit + Small</a></li>
-							<li><a href="#" class="button primary fit small">Fit + Small</a></li>
-						</ul>
-						<ul class="actions">
-							<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
-							<li><a href="#" class="button icon solid fa-download">Icon</a></li>
-						</ul>
-						<ul class="actions">
-							<li><span class="button primary disabled">Disabled</span></li>
-							<li><span class="button disabled">Disabled</span></li>
-						</ul>
-					</section>
+        .spotlight {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            margin-bottom: 5.5rem;
+        }
 
-					<section>
-						<h4>Form</h4>
-						<form method="post" action="#">
-							<div class="row gtr-uniform">
-								<div class="col-6 col-12-xsmall">
-									<input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" />
-								</div>
-								<div class="col-6 col-12-xsmall">
-									<input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" />
-								</div>
-								<div class="col-12">
-									<select name="demo-category" id="demo-category">
-										<option value="">- Category -</option>
-										<option value="1">Manufacturing</option>
-										<option value="1">Shipping</option>
-										<option value="1">Administration</option>
-										<option value="1">Human Resources</option>
-									</select>
-								</div>
-								<div class="col-4 col-12-small">
-									<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-									<label for="demo-priority-low">Low</label>
-								</div>
-								<div class="col-4 col-12-small">
-									<input type="radio" id="demo-priority-normal" name="demo-priority">
-									<label for="demo-priority-normal">Normal</label>
-								</div>
-								<div class="col-4 col-12-small">
-									<input type="radio" id="demo-priority-high" name="demo-priority">
-									<label for="demo-priority-high">High</label>
-								</div>
-								<div class="col-6 col-12-small">
-									<input type="checkbox" id="demo-copy" name="demo-copy">
-									<label for="demo-copy">Email me a copy</label>
-								</div>
-								<div class="col-6 col-12-small">
-									<input type="checkbox" id="demo-human" name="demo-human" checked>
-									<label for="demo-human">Not a robot</label>
-								</div>
-								<div class="col-12">
-									<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-								</div>
-								<div class="col-12">
-									<ul class="actions">
-										<li><input type="submit" value="Send Message" class="primary" /></li>
-										<li><input type="reset" value="Reset" /></li>
-									</ul>
-								</div>
-							</div>
-						</form>
-					</section>
+        .spotlight:last-child {
+            margin-bottom: 0;
+        }
 
-					<section>
-						<h4>Image</h4>
-						<h5>Fit</h5>
-						<div class="box alt">
-							<div class="row gtr-uniform">
-								<div class="col-12"><span class="image fit"><img src="images/pic04.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic01.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic01.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic01.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-							</div>
-						</div>
-						<h5>Left &amp; Right</h5>
-						<p><span class="image left"><img src="images/pic05.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-						<p><span class="image right"><img src="images/pic05.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-					</section>
+        .spotlight:nth-child(even) {
+            flex-direction: row-reverse;
+        }
 
-				</div>
-			</section>
-		-->
+        .spotlight-img {
+            flex: 0 0 400px;
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
 
-		<!-- Footer -->
-			<footer id="footer">
-				<ul class="icons">
-					<li><a href="https://www.facebook.com/myokyawthu.mm" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-					<li><a href="https://x.com/suuengethit" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-					<li><a href="http://t.me/suungethit" class="icon brands fa-telegram"><span class="label">Instagram</span></a></li>
-				</ul>
-				<p class="copyright"><a href="https://suuetech.blogspot.com/">SUUE TECH</a> &copy; 2024. All Rights Reserved.</p>
-			</footer>
+        .spotlight-img img {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+        }
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+        .spotlight-info {
+            flex: 1;
+        }
 
-	</body>
+        .spotlight-info h3 {
+            font-size: 1.8rem;
+            color: var(--gold-primary);
+            margin-bottom: 1.2rem;
+        }
+
+        .spotlight-info p {
+            color: var(--text-muted);
+            font-size: 1.02rem;
+            text-align: justify;
+            line-height: 1.7;
+        }
+
+        /* --- Tech Specs Section --- */
+        .specs-section {
+            padding: 6rem 8%;
+            background-color: #080808;
+        }
+
+        .specs-section h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: var(--gold-light);
+        }
+
+        .specs-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 30px;
+        }
+
+        .specs-table-wrapper {
+            background-color: var(--card-bg);
+            border-radius: 18px;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+        }
+
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .specs-table th {
+            background-color: rgba(202, 158, 46, 0.03);
+            color: var(--gold-primary);
+            text-align: left;
+            padding: 16px 24px;
+            font-size: 1.1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .specs-table td {
+            padding: 14px 24px;
+            border-bottom: 1px solid rgba(255,255,255,0.02);
+            font-size: 0.95rem;
+        }
+
+        .specs-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .specs-table td:first-child {
+            color: var(--text-muted);
+        }
+
+        .specs-table td:last-child {
+            text-align: right;
+        }
+
+        /* --- Screenshots Slider --- */
+        .screenshots-section {
+            padding: 6rem 8%;
+            text-align: center;
+        }
+
+        .screenshots-section h2 {
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: var(--gold-light);
+        }
+
+        .gallery-scroll {
+            display: flex;
+            gap: 25px;
+            overflow-x: auto;
+            padding-bottom: 30px;
+        }
+
+        .gallery-scroll::-webkit-scrollbar {
+            height: 7px;
+        }
+        .gallery-scroll::-webkit-scrollbar-track {
+            background: #111;
+            border-radius: 10px;
+        }
+        .gallery-scroll::-webkit-scrollbar-thumb {
+            background: #252525;
+            border-radius: 10px;
+        }
+        .gallery-scroll::-webkit-scrollbar-thumb:hover {
+            background: var(--gold-primary);
+        }
+
+        .gallery-item {
+            flex: 0 0 240px;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-4px);
+            border-color: rgba(202, 158, 46, 0.3);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            display: block;
+        }
+
+        /* --- CTA Section --- */
+        .cta-section {
+            padding: 6.5rem 8%;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+            background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.95)), url('images/screen.jpg') center/cover;
+        }
+
+        .cta-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            color: var(--text-muted);
+            margin-bottom: 2.2rem;
+            font-size: 1.05rem;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: #050505;
+            padding: 3rem 8%;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-links a {
+            font-size: 1.4rem;
+            color: var(--text-muted);
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--gold-primary);
+            transform: translateY(-2px);
+        }
+
+        .copyright {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .copyright a {
+            color: var(--gold-primary);
+        }
+
+        /* --- Responsive Media Queries --- */
+        @media (max-width: 992px) {
+            header {
+                padding: 4rem 5%;
+            }
+            .hero-wrapper {
+                flex-direction: column;
+                text-align: center;
+                gap: 50px;
+            }
+            .hero-actions {
+                justify-content: center;
+            }
+            .spotlight {
+                flex-direction: column !important;
+                gap: 30px;
+                text-align: center;
+            }
+            .spotlight-img {
+                max-width: 100%;
+                flex: unset;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            .specs-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="container hero-wrapper">
+            <div class="hero-content">
+                <span class="app-version-badge">POEMS APP v1.1</span>
+                <h1>Art of Words,<br>Crafted Beautifully.</h1>
+                <p>POEMS is a premium, beautifully tailored free offline application built exclusively for poem lovers. Experience poetry anytime, anywhere.</p>
+                <div class="hero-actions">
+                    <a href="https://github.com/poemapp/poemapp.github.io/releases/download/POEMAPP/POEMS_v1.1.apk" class="btn btn-gold">
+                        <i class="fa-solid fa-download"></i> Download APK
+                    </a>
+                    <a href="#features" class="btn btn-outline">Learn More</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="phone-mockup">
+                    <img src="images/screen.jpg" alt="App UI Screen">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2>Thank You for Your Support</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <i class="fa-solid fa-camera-retro"></i>
+                    <h3>Shoot</h3>
+                    <p>Capturing beautiful moments embedded into lines of rhyme.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fa-solid fa-sync"></i>
+                    <h3>Process</h3>
+                    <p>Crafting, refining, and curating an offline safe haven for reading.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fa-solid fa-cloud"></i>
+                    <h3>Upload</h3>
+                    <p>Delivering pure experience right straight to your mobile devices.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Spotlight Section -->
+    <section class="spotlight-section">
+        <div class="container">
+            <!-- Author Profile -->
+            <div class="spotlight">
+                <div class="spotlight-img">
+                    <img src="images/me.jpg" alt="Suu Nge Thit">
+                </div>
+                <div class="spotlight-info">
+                    <h3>Suu Nge Thit (YGN)</h3>
+                    <p>I am just a normal boy who enjoys every moment along this journey of life. I believe each of us is given at least a gift once we step into this world. Some say it is talent, some say it is expertise. Whatever it is called, we all are born with such a unique gift, and it is just a matter of time to find out what our talent is. So I am one of those who is trying to dig out that gift I was given.</p>
+                </div>
+            </div>
+
+            <!-- App Profile -->
+            <div class="spotlight">
+                <div class="spotlight-img">
+                    <img src="images/app_icon.png" alt="App Icon" style="padding: 35px; background: #111;">
+                </div>
+                <div class="spotlight-info">
+                    <h3>Hello All of My Friends</h3>
+                    <p>Get all Suu Nge Thit's poems in one elegant place categorized for your mood. It contains a large collection of over 90 deep poems. Why delay? Download the app and immerse yourself offline. Share this application with your friends and family to have a great time! Watch this space for more exciting updates. Please rate the app if you love it. Newer version is now available.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specifications Section -->
+    <section class="specs-section">
+        <div class="container">
+            <h2>Application Specifications</h2>
+            <div class="specs-container">
+                <!-- Table 1 -->
+                <div class="specs-table-wrapper">
+                    <table class="specs-table">
+                        <thead>
+                            <tr>
+                                <th colspan="2"><i class="fa-solid fa-circle-info" style="margin-right: 8px;"></i> POEMS INFO</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Version</td>
+                                <td>1.1</td>
+                            </tr>
+                            <tr>
+                                <td>Build No.</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>File Size</td>
+                                <td>11.70 MB</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Table 2 -->
+                <div class="specs-table-wrapper">
+                    <table class="specs-table">
+                        <thead>
+                            <tr>
+                                <th colspan="2"><i class="fa-solid fa-robot" style="margin-right: 8px;"></i> TECHNICAL DETAILS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Package Name</td>
+                                <td style="font-family: monospace; font-size: 0.85rem;">com.suupoem.book</td>
+                            </tr>
+                            <tr>
+                                <td>Minimum OS</td>
+                                <td>Lollipop 5.0</td>
+                            </tr>
+                            <tr>
+                                <td>Target OS</td>
+                                <td>Pie 9.0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Table 3 -->
+                <div class="specs-table-wrapper" style="grid-column: 1 / -1;">
+                    <table class="specs-table">
+                        <thead>
+                            <tr>
+                                <th colspan="2"><i class="fa-solid fa-clock" style="margin-right: 8px;"></i> EXTRA INFORMATION</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Uploaded Date</td>
+                                <td>7/2/2024 10:16 AM</td>
+                            </tr>
+                            <tr>
+                                <td>Developer / Owner</td>
+                                <td>Suu Nge Thit (YGN)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots Slider -->
+    <section class="screenshots-section">
+        <div class="container">
+            <h2>Application Screenshots</h2>
+            <div class="gallery-scroll">
+                <div class="gallery-item"><img src="images/Preview1.jpg" alt="Screenshot 01"></div>
+                <div class="gallery-item"><img src="images/Preview2.jpg" alt="Screenshot 02"></div>
+                <div class="gallery-item"><img src="images/Preview3.jpg" alt="Screenshot 03"></div>
+                <div class="gallery-item"><img src="images/Preview4.jpg" alt="Screenshot 04"></div>
+                <div class="gallery-item"><img src="images/Preview5.jpg" alt="Screenshot 05"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Get POEMS v1.1 Now</h2>
+            <p>Experience poetry with a seamless, lag-free premium reading interface designed offline.</p>
+            <div class="hero-actions" style="justify-content: center;">
+                <a href="assets/app/POEMS_1.1.apk" class="btn btn-gold">
+                    <i class="fa-solid fa-download"></i> Direct Download
+                </a>
+                <a href="https://suuetech.blogspot.com/" target="_blank" class="btn btn-outline">Explore Blog</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://www.facebook.com/myokyawthu.mm" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://x.com/suuengethit" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                <a href="http://t.me/suungethit" target="_blank"><i class="fa-brands fa-telegram"></i></a>
+            </div>
+            <p class="copyright">
+                &copy; 2024 <a href="https://suuetech.blogspot.com/" target="_blank">SUUE TECH</a>. All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+
+</body>
 </html>
