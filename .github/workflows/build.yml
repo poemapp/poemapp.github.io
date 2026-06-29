@@ -10,25 +10,26 @@ jobs:
         with:
           python-version: '3.10'
           
-      # ဒီအပိုင်းလေး ထပ်ထည့်ပေးရပါမယ်
       - uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.x'
+          flutter-version: '3.41.7' # Flet version နဲ့ ကိုက်ညီတဲ့ ဗားရှင်း
           channel: 'stable'
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install flet
         
       - name: Build APK
         run: |
-          pip install flet
-          # Android licenses တွေကို အလိုအလျောက် သဘောတူမယ်
-          yes | flutter doctor --android-licenses
-          # ပြီးရင် build မယ်
-          flet build apk
+          # Android licenses ကို အော်တို လက်ခံခြင်း
+          yes | flutter doctor --android-licenses || true
+          # flet build apk ကို interactive မဖြစ်စေဘဲ တိုက်ရိုက် run ခြင်း
+          flet build apk --android-skip-build-dependency-validation
           
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: app-release
-          path: build/apk/app-release.apk
+          path: build/apk/app-release-*.apk
