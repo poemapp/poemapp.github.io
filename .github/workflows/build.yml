@@ -31,8 +31,15 @@ jobs:
           export GRADLE_OPTS="-Dorg.gradle.jvmargs=-Xmx2048m"
           flet build apk
           
+      - name: Find and Upload APK
+        run: |
+          # APK ဖိုင်ဘယ်နေရာမှာ ထွက်လာလဲဆိုတာ ရှာမယ်
+          find . -name "*.apk"
+          
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: app-release
-          path: build/apk/app-release-*.apk
+          # path ကို ဒီအတိုင်း ပြောင်းလိုက်ပါ
+          path: build/app/outputs/flutter-apk/*.apk
+          if-no-files-found: error
