@@ -23,10 +23,13 @@ jobs:
         
       - name: Build APK
         run: |
-          # Android licenses ကို အော်တို လက်ခံခြင်း
+          pip install flet
+          # License တွေကို အရင်လက်ခံမယ်
           yes | flutter doctor --android-licenses || true
-          # flet build apk ကို interactive မဖြစ်စေဘဲ တိုက်ရိုက် run ခြင်း
-          flet build apk --android-skip-build-dependency-validation
+          
+          # Gradle ကို build လုပ်တဲ့အခါ error မတက်အောင် environment variable နဲ့ bypass လုပ်မယ်
+          export GRADLE_OPTS="-Dorg.gradle.jvmargs=-Xmx2048m"
+          flet build apk
           
       - name: Upload APK
         uses: actions/upload-artifact@v4
