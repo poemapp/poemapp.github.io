@@ -24,22 +24,16 @@ jobs:
       - name: Build APK
         run: |
           pip install flet
-          # License တွေကို အရင်လက်ခံမယ်
           yes | flutter doctor --android-licenses || true
-          
-          # Gradle ကို build လုပ်တဲ့အခါ error မတက်အောင် environment variable နဲ့ bypass လုပ်မယ်
-          export GRADLE_OPTS="-Dorg.gradle.jvmargs=-Xmx2048m"
           flet build apk
-          
-      - name: Find and Upload APK
-        run: |
-          # APK ဖိုင်ဘယ်နေရာမှာ ထွက်လာလဲဆိုတာ ရှာမယ်
-          find . -name "*.apk"
+          # ဖိုင်တွေ ဘယ်နေရာမှာ ထွက်လာလဲ သိရအောင် အကုန်ပြခိုင်းမယ်
+          echo "Listing all files in build directory:"
+          find build -name "*.apk"
           
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: app-release
-          # path ကို ဒီအတိုင်း ပြောင်းလိုက်ပါ
-          path: build/app/outputs/flutter-apk/*.apk
+          # ပိုကျယ်ပြန့်တဲ့ path ကို သုံးမယ်
+          path: build/**/*.apk
           if-no-files-found: error
