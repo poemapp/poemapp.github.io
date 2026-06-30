@@ -1,10 +1,10 @@
 {
-  "Visibility": "VISIBLE",
-  "Title": "Version Update",
-  "Description": "Newer Version of App is Available\nClick on the button to update the app now",
-  "MainTextButton": "Update Now",
-  "Cancelable": true,
-  "CancelButtonText": "Cancel",
-  "DownloadLink": "https://poemapp.github.io/",
-  "Version": 1.1
+    "Visibility": "VISIBLE",
+    "Title": "Version Update",
+    "Description": "Newer Version of App is Available\nClick on the button to update the app now",
+    "MainTextButton": "Update Now",
+    "Cancelable": true,
+    "CancelButtonText": "Cancel",
+    "DownloadLink": "https://poemapp.github.io/",
+    "Version": 1.1
 }
